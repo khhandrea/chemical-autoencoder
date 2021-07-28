@@ -1,5 +1,5 @@
   
-name: chemvae
+name: 01_chemvae
 channels:
   - rdkit
   - conda-forge

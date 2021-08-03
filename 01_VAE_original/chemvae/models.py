@@ -64,18 +64,13 @@ def encoder_model(params):
         middle = x
 
     z_mean = Dense(params['hidden_dim'], name='z_mean_sample')(middle)
+    
 
     # return both mean and last encoding layer for std dev sampling
     return Model(x_in, [z_mean, middle], name="encoder")
 
 
 def load_encoder(params):
-    # Need to handle K_params somehow...
-    # Also are we going to be able to save this layer?
-    # encoder = encoder_model(params, K.constant(0))
-    # encoder.load_weights(params['encoder_weights_file'])
-    # return encoder
-    # !# not sure if this is the right format
     return load_model(params['encoder_weights_file'])
 
 

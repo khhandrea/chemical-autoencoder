@@ -1,0 +1,4 @@
+git+https://github.com/EderSantana/seya.git
+h5py==2.6.0
+git+https://github.com/rgbombarelli/keras.git
+git+git://github.com/Theano/Theano.git

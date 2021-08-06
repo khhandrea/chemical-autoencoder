@@ -69,7 +69,7 @@ def smiles_to_hot(smiles, max_len, padding, char_indices, nchars):
             try:
                 X[i, t, char_indices[char]] = 1
             except KeyError as e:
-                print("ERROR: Check chars file. Bad SMILES:", smile)
+                # print("ERROR: Check chars file. Bad SMILES:", smile)
                 raise e
     return X
 

@@ -8,6 +8,12 @@ Comparing ASK1 Chemical AutoEncoder
 virtual conda environment with rdkit
 (some samples contain the environment.)
 
+## Contents
+- chemvae : AutoEncoder model
+- examples : Implementation of AE
+- models : data
+- environment.yml : conda virtual environment
+
 ## References
 * Paper - [Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules](https://pubs.acs.org/doi/abs/10.1021/acscentsci.7b00572)
 * Paper - [Improving Chemical Autoencoder Latent Space and Molecular DeNovo Generation Diversity with Heteroencoders](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6316879/)

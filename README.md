@@ -2,6 +2,7 @@
 ------
 Comparing ASK1 Activation from Chemical AutoEncoder latent space and fingerprint plots
 ![ouput image](./output_similars.png)
+(Sample molecules from varitional autoencoder)
 ![output image](./output.png)
 (Red : Active compounds, Blue : Inactive compounds)
 ## setup

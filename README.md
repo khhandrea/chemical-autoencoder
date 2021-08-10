@@ -9,20 +9,17 @@ virtual conda environment with rdkit
 (some samples contain the environment.)
 
 ## Contents
-- chemvae : AutoEncoder model
-- examples : Implementation of AE
-- models : data
 - environment.yml : conda virtual environment
-
-## Contents
-- hyperparameters.py : set hyperparameters
-- sampled_rnn_tf.py : rnn sample model
-- tgru_k2_gpu.py : gru sample model (importing rnn)
-- models.py : autoencoder sample model (importing gru)
-- mol_utils.py : utils to handle molecule format files
-- mol_callbacks.py : callback functions to be called
-- train_vae.py : implementing functions with actual model
-- vae_utils.py : utils to be used from VAE model
+- models : AutoEncoder data
+- chemvae : AutoEncoder model
+  - hyperparameters : set hyperparameters
+  - sampled_rnn_tf : rnn sample model
+  - tgru_k2_gpu : gru sample model (importing rnn)
+  - models : autoencoder sample model (importing gru)
+  - mol_utils : utils to handle molecule format files
+  - mol_callbacks : callback functions to be called
+  - train_vae : implementing functions with actual model
+  - vae_utils : utils to be used from VAE model
 
 ## References
 * Paper - [Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules](https://pubs.acs.org/doi/abs/10.1021/acscentsci.7b00572)

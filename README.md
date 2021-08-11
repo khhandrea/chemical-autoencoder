@@ -1,11 +1,9 @@
 # Chemical AutoEncoder
 ------
 Comparing ASK1 Activation from Chemical AutoEncoder latent space and fingerprint plots
-![output image](./output.png)
-(Red : Active compounds, Blue : Inactive compounds)
+
 ## setup
-virtual conda environment with rdkit
-(some samples contain the environment.)
+virtual conda environment with rdkit (environment.yml)
 
 ## Contents
 - environment.yml : conda virtual environment
@@ -19,6 +17,24 @@ virtual conda environment with rdkit
   - mol_callbacks : callback functions to be called
   - train_vae : implementing functions with actual model
   - vae_utils : utils to be used from VAE model
+
+## Results
+#### ASK1
+<img src="./results/ask1_output.png" alt="results iamge1"/>
+
+<span style="color:gray">ASK1 kinase compound results with latent space and fingerprints; Red : Active compounds, Blue : Inactive compounds</span>
+
+<img src="./results/ask1_latent_output.png" width=250/>
+
+<img src="./results/ask1_molecules.png"/>
+
+<span style="color:gray">ASK1 kinase compound results with latent space and fingerprints</span>
+
+#### ASK1
+<img src="./results/mao_output.png" alt="results iamge2" height=250/>
+
+
+<span style="color:gray">mao compound results with latent space; Red : Active compounds, Blue : Inactive compounds</span>
 
 ## References
 * Paper - [Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules](https://pubs.acs.org/doi/abs/10.1021/acscentsci.7b00572)

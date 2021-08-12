@@ -30,11 +30,14 @@ virtual conda environment with rdkit (environment.yml)
 
 <span style="color:gray">ASK1 kinase compound results with latent space and fingerprints</span>
 
-#### ASK1
+#### Mao (Asinex)
 <img src="./results/mao_output.png" alt="results iamge2" height=250/>
 
-
 <span style="color:gray">mao compound results with latent space; Red : Active compounds, Blue : Inactive compounds</span>
+
+<img src="./results/mao_batched_output.png" alt="results iamge"/>
+
+<span style="color:gray">5000-batched mao compound results with latent space and fingerprint; Red : Active compounds, Blue : Inactive compounds</span>
 
 ## References
 * Paper - [Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules](https://pubs.acs.org/doi/abs/10.1021/acscentsci.7b00572)

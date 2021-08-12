@@ -39,6 +39,14 @@ virtual conda environment with rdkit (environment.yml)
 
 <span style="color:gray">5000-batched mao compound results with latent space and fingerprint; Red : Active compounds, Blue : Inactive compounds</span>
 
+<img src="./results/mao_vanila_latent_output.png" alt="results iamge"/>
+
+<span style="color:gray">mao compound results with latent space and fingerprint</span>
+
+<img src="./results/mao_vanila_rdk_output.png" alt="results iamge"/>
+
+<img src="./results/mao_molecules.png" alt="results iamge"/>
+
 ## References
 * Paper - [Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules](https://pubs.acs.org/doi/abs/10.1021/acscentsci.7b00572)
 * Paper - [Improving Chemical Autoencoder Latent Space and Molecular DeNovo Generation Diversity with Heteroencoders](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6316879/)

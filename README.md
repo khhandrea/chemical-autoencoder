@@ -41,9 +41,11 @@ virtual conda environment with rdkit (environment.yml)
 
 <img src="./results/mao_vanila_latent_output.png" alt="results iamge"/>
 
-<span style="color:gray">mao compound results with latent space and fingerprint</span>
+<span style="color:gray">mao compound results with latent space and fingerprint; Bluish : activation 0, Purple : activation 1, Pink : activation 2, Brown : activation 3</span>
 
 <img src="./results/mao_vanila_rdk_output.png" alt="results iamge"/>
+
+<span style="color:gray">Subspace to check as the molecules are gathered</span>
 
 <img src="./results/mao_molecules.png" alt="results iamge"/>
 

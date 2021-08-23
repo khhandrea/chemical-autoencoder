@@ -54,7 +54,7 @@ import numpy as np
 if K.backend() == 'tensorflow':
     from .sampled_rnn_tf import sampled_rnn
 else:
-
+    print(K.backend())
     raise NotImplemented("Backend not implemented")
 
 

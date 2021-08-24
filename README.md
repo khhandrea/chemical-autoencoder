@@ -1,7 +1,8 @@
 # Chemical AutoEncoder
 ------
 Comparing molecules from the chemical autoEncoder latent space and fingerprint plots
-and its example
+and its example.
+##### to run the code, click [here](https://github.com/khhandrea/chemical-autoencoder/blob/main/implement.ipynb).
 
 ## setup
 virtual conda environment with rdkit (environment.yml)

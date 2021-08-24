@@ -19,7 +19,10 @@ virtual conda environment with rdkit (environment.yml)
   - vae_utils : utils to be used from VAE model
 
 ## Results
-#### ASK1
+
+-----
+
+#### 01. ASK1
 <img src="./results/ask1_output.png" alt="results iamge1"/>
 
 <span style="color:gray">ASK1 kinase compound results with latent space and fingerprints; Red : Active compounds, Blue : Inactive compounds</span>
@@ -30,7 +33,9 @@ virtual conda environment with rdkit (environment.yml)
 
 <span style="color:gray">ASK1 kinase compound results with latent space and fingerprints</span>
 
-#### Mao (Asinex)
+-----
+
+#### 02. Mao (Asinex)
 <img src="./results/mao_output.png" alt="results iamge2" height=250/>
 
 <span style="color:gray">mao compound results with latent space; Red : Active compounds, Blue : Inactive compounds</span>
@@ -48,6 +53,27 @@ virtual conda environment with rdkit (environment.yml)
 <span style="color:gray">Subspace to check as the molecules are gathered</span>
 
 <img src="./results/mao_molecules.png" alt="results iamge"/>
+
+-----
+
+#### 03. Aryl_ether
+<img src="./results/aryl_output.png"/>
+
+<span style="color:gray">aryl ether compound results with latent space and fingerprint</span>
+
+<img src="./results/aryl_MACCSKeys_cluster.png" width=400/>
+
+<span style="color:gray">aryl ether compound clustered with 7 groups automatically</span>
+
+<img src="./results/aryl_molecules.png"/>
+
+<span style="color:gray">molecules of clustered 7 groups</span>
+
+→ we picked label 0, label 2, and label 4 for valid moleculs to research.
+
+<img src="./results/aryl_in_asinex_output.png"/>
+
+<span style="color:gray">valid aryl ether results in batched asinex molecule groups with latent space and fingerprint; Bluish : asinex, Pink : aryl ether</span>
 
 ## References
 * Paper - [Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules](https://pubs.acs.org/doi/abs/10.1021/acscentsci.7b00572)

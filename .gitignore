@@ -1,2 +1,12 @@
 data/*
 test/*
+aryl_ether_in_asinex.ipynb
+aryl_ether_plotting_smiles.ipynb
+ask1_data_preprocess.ipynb
+ask1_latent_extractor.ipynb
+ask1_plotting_smiles.ipynb
+mao_batched_plotting_smiles.ipynb
+mao_data_preprocess.ipynb
+mao_plotting_smiles.ipynb
+mao_vanilla_plotting_smiles.ipynb
+plotting_similars.ipynb

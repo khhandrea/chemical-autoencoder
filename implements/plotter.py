@@ -1,7 +1,9 @@
 import pandas as pd
 from matplotlib import pyplot as plt
 from sklearn.cluster import KMeans
-from rdkit.Chem import PandasTools
+from rdkit.Chem import PandasTools, SDWriter
+from rdkit.Chem import AllChem as Chem
+from IPython.display import display
 
 def plot_molecules(project,
                 alpha = 0.5,
@@ -169,29 +171,33 @@ def plot_molecules(project,
     plt.show()
     
 
-def cluster(project, sel, n_clusters): # cluster, plot, display
+def cluster(project, sel, n_clusters, # cluster, plot, display
+            alpha = 0.5,
+            size = 5,
+            bg_color = '#ffffff'): # '#CAD3C8'):
+
     # fetch coordinates
     selected = None
-    if sel == '1':
+    if sel == 1:
         selected = 'latent_group_pca'
-    elif sel == '2':
+    elif sel == 2:
         selected = 'latent_group_tsne'
-    elif sel == '3':
+    elif sel == 3:
         selected = 'rdk_fp_pca'
-    elif sel == '4':
-        selected = 'rdk_fp_pca'
-    elif sel == '5':
+    elif sel == 4:
+        selected = 'rdk_fp_tsne'
+    elif sel == 5:
         selected = 'pattern_fp_pca'
-    elif sel == '6':
-        selected = 'pattern_fp_pca'
-    elif sel == '7':
+    elif sel == 6:
+        selected = 'pattern_fp_tsne'
+    elif sel == 7:
         selected = 'layered_fp_pca'
-    elif sel == '8':
-        selected = 'layered_fp_pca'
-    elif sel == '9':
+    elif sel == 8:
+        selected = 'layered_fp_tsne'
+    elif sel == 9:
         selected = 'MACCSKeys_fp_pca'
-    elif sel == '10':
-        selected = 'MACCSKeys_fp_pca'
+    elif sel == 10:
+        selected = 'MACCSKeys_fp_tsne'
 
     print('fetching', selected, 'points...')
     points_selected = []
@@ -200,7 +206,7 @@ def cluster(project, sel, n_clusters): # cluster, plot, display
     for i in range(len(df)):
         points_selected.append([df.loc[i, 'smiles'], [float(df.loc[i, '0']), float(df.loc[i, '1'])], int(df.loc[i, 'values'])])
     df = pd.DataFrame([ points[1] for points in points_selected ]) # 여기부터
-
+    
     # k-means clusters
     kmeans = KMeans(n_clusters=n_clusters)
     kmeans.fit(df)
@@ -210,11 +216,30 @@ def cluster(project, sel, n_clusters): # cluster, plot, display
 
     fig, ax = plt.subplots(1, 1)
     fig.set_size_inches((5, 5))
-    plt.scatter(x, y, c=labels, alpha=0.5, s=4)
+    plt.rcParams['axes.facecolor'] = bg_color
+    plt.scatter(x, y, c=labels, alpha=alpha, s=size)
     plt.colorbar()
     plt.show()
 
+    # display
+    df_area = [ pd.DataFrame([], columns=[i]) for i in range(n_clusters) ]
+
+    for idx, i in enumerate(labels):
+        df_area[i].loc[len(df_area[i])] = [Chem.MolFromSmiles(points_selected[idx][0])]
+    for label in range(n_clusters):
+        print('<< label', label, '>>')
+        display(PandasTools.FrameToGridImage(df_area[label][:10], column=label, legendsCol=label, molsPerRow=10))    
+    
+    return df_area
+
 def export_molecules(project, clustered, sel):
-    print('export', project)
-    print('clustered :', clustered)
-    print('sel :', sel)
+    molecules = []
+    for i in sel:
+        molecules.extend(clustered[i].values)
+
+    directory = project + '/result.sd'
+    w = SDWriter(directory)   
+    print('saving sd files...', end='') 
+    for molecule in molecules:
+        w.write(molecule[0])
+    print(directory, 'is saved!')

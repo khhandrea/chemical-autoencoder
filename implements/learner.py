@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 
-def learn_tsne_pca(project):
+def learn_tsne_pca(project, gpu_available=False):
     # fetch data
     print('(1/5) fetching latent space group...', end='')
     latent_group = []

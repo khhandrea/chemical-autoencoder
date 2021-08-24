@@ -71,8 +71,7 @@ def encode_latent_fp(project):
     MACCSKeys_fp_group = []
 
     # rdk fp
-    print('\rencoding rdk fp...')
-    print(mols)
+    print('encoding rdk fp...')
     fps = [ Chem.RDKFingerprint(mol) for mol in mols ]
     fpBits = [ [ int(char) for char in fp.ToBitString() ] for fp in fps ]
     rdk_fp_group.extend(list(zip([ data[0] for data in smiles_group ], fpBits, [ data[1] for data in smiles_group ])))
@@ -81,7 +80,7 @@ def encode_latent_fp(project):
     df.to_csv(directory)
 
     # pattern fp
-    print('\rencoding pattern fp...')
+    print('encoding pattern fp...')
     fps = [ Chem.PatternFingerprint(mol) for mol in mols ]
     fpBits = [ [ int(char) for char in fp.ToBitString() ] for fp in fps ]
     pattern_fp_group.extend(list(zip([ data[0] for data in smiles_group ], fpBits, [ data[1] for data in smiles_group ])))
@@ -90,7 +89,7 @@ def encode_latent_fp(project):
     df.to_csv(directory)
 
     # layered fp
-    print('\rencoding layered fp...')
+    print('encoding layered fp...')
     fps = [ Chem.LayeredFingerprint(mol) for mol in mols ]
     fpBits = [ [ int(char) for char in fp.ToBitString() ] for fp in fps ]
     layered_fp_group.extend(list(zip([ data[0] for data in smiles_group ], fpBits, [ data[1] for data in smiles_group ])))
@@ -99,10 +98,12 @@ def encode_latent_fp(project):
     df.to_csv(directory)
 
     # MACCSKeys fp
-    print('\rencoding layered fp...')
+    print('encoding MACCSKeys fp...')
     fps = [ Chem.GetMACCSKeysFingerprint(mol) for mol in mols ]
     fpBits = [ [ int(char) for char in fp.ToBitString() ] for fp in fps ]
     MACCSKeys_fp_group.extend(list(zip([ data[0] for data in smiles_group ], fpBits, [ data[1] for data in smiles_group ])))
     df = pd.DataFrame(MACCSKeys_fp_group)
     directory = project + '/data/MACCSKeys_fp_group.csv'
     df.to_csv(directory)
+
+    print('finish!')

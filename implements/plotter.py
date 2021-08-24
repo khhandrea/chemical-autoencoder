@@ -239,7 +239,7 @@ def export_molecules(project, clustered, sel):
 
     directory = project + '/result.sd'
     w = SDWriter(directory)   
-    print('saving sd files...', end='') 
+    print('saving', len(molecules), 'molecules to sd files...') 
     for molecule in molecules:
         w.write(molecule[0])
     print(directory, 'is saved!')

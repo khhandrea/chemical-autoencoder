@@ -1,6 +1,7 @@
 # Chemical AutoEncoder
 ------
-Comparing ASK1 Activation from Chemical AutoEncoder latent space and fingerprint plots
+Comparing molecules from the chemical autoEncoder latent space and fingerprint plots
+and its example
 
 ## setup
 virtual conda environment with rdkit (environment.yml)

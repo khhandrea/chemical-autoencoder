@@ -178,7 +178,7 @@ def cluster(project, sel, n_clusters, # cluster, plot, display
 
     # fetch coordinates
     selected = None
-    if sel == 1:
+    if sel == '' or sel == 1:
         selected = 'latent_group_pca'
     elif sel == 2:
         selected = 'latent_group_tsne'
@@ -232,14 +232,12 @@ def cluster(project, sel, n_clusters, # cluster, plot, display
     
     return df_area
 
-def export_molecules(project, clustered, sel):
-    molecules = []
-    for i in sel:
-        molecules.extend(clustered[i].values)
-
-    directory = project + '/result.sd'
-    w = SDWriter(directory)   
-    print('saving', len(molecules), 'molecules to sd files...') 
-    for molecule in molecules:
-        w.write(molecule[0])
-    print(directory, 'is saved!')
+def export_molecules(project, clustered):
+    for idx, group in enumerate(clustered):
+        directory = project + '/result' + str(idx) + '.sd'
+        print('\rsaving', directory, '...', end='')
+        print(group.values)
+        w = SDWriter(directory)   
+        for mol in [ mol[0] for mol in group.values ]:
+            w.write(mol)
+    print('files are saved!')

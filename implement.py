@@ -3,28 +3,28 @@ from implements.encoder import encode_latent_fp
 from implements.learner import learn_tsne_pca
 from implements.plotter import plot_molecules, cluster, export_molecules
 
-# ## Setup Project
-# project = input('input project name ')
-# directory = './' + project
-# try:
-#     if not os.path.exists(directory):
-#         os.makedirs(directory)
-#         os.makedirs(directory + '/data')
-#         print('project created :', project)
-#     else:
-#         print('project with the same name already exists :', project)
-# except OSError:
-#     print('Error : Creating directory', directory)
+# Setup Project
+project = input('input project name ')
+directory = './' + project
+try:
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+        os.makedirs(directory + '/data')
+        print('project created :', project)
+    else:
+        print('project with the same name already exists :', project)
+except OSError:
+    print('Error : Creating directory', directory)
 
 
-# ## Encode molecules to latent space & fingerprints
-# encode_latent_fp(project)
+## Encode molecules to latent space & fingerprints
+encode_latent_fp(project)
 
-# ## tSNE & PCA
-# learn_tsne_pca('test')
+## tSNE & PCA
+learn_tsne_pca('test')
 
-# ## Plot molecules
-# plot_molecules('test', size=200, alpha=1, fontsize=12)
+## Plot molecules
+plot_molecules('test', size=200, alpha=1, fontsize=12)
 
 ## Select and cluster the molecules
 sel = input('enter the graph to be clustered')

@@ -234,7 +234,7 @@ def cluster(project, sel, n_clusters, # cluster, plot, display
 
 def export_molecules(project, clustered):
     for idx, group in enumerate(clustered):
-        directory = project + '/result' + str(idx) + '.sd'
+        directory = project + '/result' + '{0:0>2}'.format(idx) + '.sd'
         print('\rsaving', directory, '...', end='')
         print(group.values)
         w = SDWriter(directory)   
